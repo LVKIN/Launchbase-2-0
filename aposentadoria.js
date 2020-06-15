@@ -1,7 +1,7 @@
-const nome = "Lucas";
-const sexo = "M";
-const idade = 19;
-const contribuicao = 2;
+const nome = "Gabriella";
+const sexo = "F";
+const idade = 20;
+const contribuicao = 0;
 
 const result = idade + contribuicao;
 
