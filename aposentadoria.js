@@ -21,3 +21,4 @@ if (sexo == "M"){
 } else {
   console.log("Sexo inválido");
 }
+/* aposentadoria */
