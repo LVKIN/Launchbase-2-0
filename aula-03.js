@@ -1,127 +1,161 @@
 // Aula 03 
-// Videos 09
+// Videos 09 - 16
 
 // Objetos
-// Calcular a média de objetos
-
-const aluno01 = {
-  nome: "Lucas",
-  nota: 9.8
+const student01 = {
+  name: "Lucas",
+  grade: 9.8
 }
 
-const aluno02 = {
-  nome: "Guilherme",
-  nota: 10
+const student02 = {
+  name: "Guilherme",
+  grade: 10
 }
 
-const aluno03 = {
-  nome: "Gabriella",
-  nota: 7
+const student03 = {
+  name: "Gabriella",
+  grade: 7
 }
 
 // Exibindo o objeto
-console.log(aluno03);
+console.log(student03);
 // Acessando propriedades dentro dos objetos
-console.log(aluno02.nome);
+console.log(student02.name);
 // calculando a media das notas
-const mediaObj = (aluno01.nota + aluno02.nota + aluno03.nota) / 3
-console.log(mediaObj.toFixed(1));
+const averageObj = (student01.grade + student02.grade + student03.grade) / 3;
 
 // Array
-const alunos = [
+const students = [
   {
-    nome: "Lucas",
-    nota: 9.8
+    name: "Lucas",
+    grade: 9.8
   },
   {
-    nome: "Guilherme",
-    nota: 10
+    name: "Guilherme",
+    grade: 10
   },
   {
-    nome: "Gabriella",
-    nota: 7
+    name: "Gabriella",
+    grade: 7
   }
 ]
 
 // Exibindo o Array
-console.log(alunos);
+console.log(students);
 // Acessando um objeto específico dentro do array
-console.log(alunos[1]);
+console.log(students[1]);
 // Exibindo a propriedade de um objeto dentro do Array
-console.log(alunos[0].nome); 
-//
-const mediaArray = (alunos[0].nota + alunos[1].nota + alunos[2].nota) / 3
-console.log(mediaArray.toFixed(1));
+console.log(students[0].name);
+// Calculando a media de dentro do array
+const averageArray = (students[0].grade + students[1].grade + students[2].grade) / 3;
 
 
 // Funções e Métodos
-
-const turmaA = [
+const classA = [
   {
-    nome: "Lucas",
-    nota: 9.8
+    name: "Lucas",
+    grade: 9.8
   },
   {
-    nome: "Guilherme",
-    nota: 10
+    name: "Guilherme",
+    grade: 10
   },
   {
-    nome: "Gabriella",
-    nota: 7
+    name: "Gabriella",
+    grade: 7
   }
 ]
 
-const turmaB = [
+const classB = [
   {
-    nome: "João",
-    nota: 6
+    name: "João",
+    grade: 6
   },
   {
-    nome: "Gustavo",
-    nota: 0
+    name: "Gustavo",
+    grade: 0
   },
   {
-    nome: "Rodrigo",
-    nota: 5
+    name: "Rodrigo",
+    grade: 5
   },
   {
-    nome: "Samuel",
-    nota: 10
+    name: "Samuel",
+    grade: 10
   }
 ]
-
-function calculaMedia(alunos){
-  return (alunos[0].nota + alunos[1].nota + alunos[2].nota) / 3
+// função de calculo de objetos estáticos
+function calculateAverage(students) {
+  return (students[0].grade + students[1].grade + students[2].grade) / 3;
 }
 
 // Estrutura de Repetição
 // Simulando entrada de novos objetos no Array
-function calculaMedia02(alunos){
-  let soma = 0;
-  for (let i = 0; i < alunos.length; i++){
-    soma = soma + alunos[i].nota
+function calculateAverage02(students) {
+  let sum = 0;
+  for (let i = 0; i < students.length; i++) {
+    sum = sum + students[i].grade;
   }
-  const media = soma / alunos.length;  
-  return media;
+  const average = sum / students.length;
+  return average;
 }
 
 
-const media1 = calculaMedia(turmaA);
-const media2 = calculaMedia(turmaB);
 
-const media3 = calculaMedia02(turmaA);
-const media4 = calculaMedia02(turmaB);
-
-function enviaMensagem(media, turma){
-  if(media > 5){
-    console.log(`A média da turma ${turma} foi de ${media.toFixed(1)}, parabéns para aos alunos!`);  
+function sendMessage(average, classes) {
+  if (average > 5) {
+    console.log(`The average of ${classes} was ${average.toFixed(1)}, congratulations!`);
   } else {
-    console.log(`Notas da turma ${turma} foi de ${media.toFixed(1)} baixas demais, melhorem!`);
-    
+    console.log(`Average of ${classes} was ${average.toFixed(1)}, improve your grades!`);
+
   }
 }
 
-enviaMensagem(media1, 'turmaA');
-enviaMensagem(media2, 'turmaB');
-enviaMensagem(media3, 'turmaA');
-enviaMensagem(media4, 'turmaB');
+
+
+
+// Marcar estudante como reprovado se média for menor que 5
+// e enviar uma mensagem
+function disapprove(student) {
+  student.flunked = false;
+  if (student.grade < 5) {
+    student.flunked = true
+  }
+}
+
+
+
+function infoDisapprove(student) {
+  if (student.flunked) {
+    console.log(`The student ${student.name} is disapproved!`)
+  }
+}
+
+function flunked(students) {
+  for (let student of students) {
+    disapprove(student);
+    infoDisapprove(student);
+  }
+}
+
+console.log(averageObj.toFixed(1));
+console.log(averageArray.toFixed(1));
+
+// estático
+const average1 = calculateAverage(classA);
+const average2 = calculateAverage(classB);
+// novos objetos
+const average3 = calculateAverage02(classA);
+const average4 = calculateAverage02(classB);
+
+// estático 
+sendMessage(average1, 'classA');
+sendMessage(average2, 'classB');
+// novos objetos
+sendMessage(average3, 'classA');
+sendMessage(average4, 'classB');
+
+disapprove(classB)
+
+flunked(classA)
+flunked(classB)
