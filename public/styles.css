@@ -87,53 +87,39 @@ header{
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
-  align-items: center;
+  gap: 16px;
+  /* cursor: pointer; */
 }
 .card{
   background-color: var(--color-rocket);
-  font-size: auto;
-  /* margin: 0 auto; */
+}
+.card__image-container img{
+  width: 100%;
   cursor: pointer;
 }
-
-.card__image-container img{
-  
-  width: 100%;
-
-}
 .card__content,
-.card__info{
+.card__info{ 
   padding: 24px;
-  
 }
-
 .card__info{
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-.card__course{
-  font-size: 12px;
-
+.card__content{
+  height: 85px;
+  max-height: 85px;
 }
-.card__enterprise{
+.card__duration{
+  padding: 5px 0px;
+}
+.card__price{
   background-color: var(--color-rocket);
   filter: brightness(90%);
-  padding: 5px 5px;
+  padding: 5px 20px;
   border-radius: 20px;
   text-align: center;
 }
-.card__enterprise a{
-  color: white;
-  font-size: 12px;
-  line-height: 28px;
-  margin: 0 16px;
-  text-decoration: none;
-}
-.card__enterprise a:hover{
-  color: var(--color-green);
-  transition: color 200ms;
-}
+
 
 /* MODAL */
 
@@ -162,7 +148,7 @@ header{
 }
 
 /* MODAL.ACTIVE */
-.modal-overlay .active{
+.modal-overlay.active{
   opacity: 1;
   visibility: visible;
 }
