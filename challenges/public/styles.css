@@ -181,3 +181,17 @@ iframe{
   margin: 5vh auto;
   position: absolute;
 }
+
+/* 404 */
+.error{
+  padding: 32px;
+  text-align: center;
+}
+.error-title{
+  font-size: 36px;
+  padding: 24px;
+}
+
+.error-content{
+  font-size: 24px;
+}

@@ -20,6 +20,10 @@ server.get("/videos", function(req, res){
   return res.render("videos", {items: projs})
 })
 
+server.use(function(req, res){
+  res.status(404).render("error-404")
+})
+
 server.listen(5000, function(){
   console.log("Server is running")
 })

@@ -1,17 +1,6 @@
-<html>
-  <head>
-    <title>
-      Rocketseat
-    </title>
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <header>
-      <div class="links">
-        <a href="/">About</a>
-        <a href="contents.html">Contents</a>
-      </div>
-    </header>
+{% extends "layout.njk" %}
+
+{% block body %}
     <div class="wrapper">
       <img src="https://rocketseat.com.br/static/images/logo-rocketseat.svg" alt="logo-rocketseat">
       <h1><a href="rocketseat.com.br">Rocketseat</a></h1>
@@ -32,6 +21,4 @@
       <a href="github.com/rocketseat" target="_blanked">Github</a>
       <a href="facebook.com/rocketseat" target="_blanked">Facebook</a>
     </div>
-    
-  </body>
-</html>
+{% endblock %}    
