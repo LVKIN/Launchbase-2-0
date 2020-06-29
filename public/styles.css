@@ -92,6 +92,7 @@ header{
 }
 .card{
   background-color: var(--color-rocket);
+  display: grid;
 }
 .card__image-container img{
   width: 100%;
@@ -104,14 +105,9 @@ header{
 .card__info{
   display: grid;
   grid-template-columns: 1fr 1fr;
+  align-items: center;
 }
-.card__content{
-  height: 85px;
-  max-height: 85px;
-}
-.card__duration{
-  padding: 5px 0px;
-}
+
 .card__price{
   background-color: var(--color-rocket);
   filter: brightness(90%);

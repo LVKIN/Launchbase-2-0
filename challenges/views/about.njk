@@ -2,12 +2,12 @@
 
 {% block body %}
     <div class="wrapper">
-      <img src="https://rocketseat.com.br/static/images/logo-rocketseat.svg" alt="logo-rocketseat">
-      <h1><a href="rocketseat.com.br">Rocketseat</a></h1>
-      <h2>In the midst of so much information and the amount of tools that come up every day, you need someone to take you in the right direction.</h2>
+      <img src="{{data.avatar_link}}" alt="logo-rocketseat">
+      <h1><a href="{{data.site}}">{{data.name}}</a></h1>
+      <h2>{{data.role}}</h2>
     </div>
     <div class="list">
-        <h2>Our core technologies are:</h2>
+        <h2>{{data.description}}</h2>
         <ul>
           <li data-id="1"><span>JavaScript</span></li>
           <li data-id="2"><span>NodeJS</span> </li>
@@ -17,8 +17,8 @@
     
     </div>
     <div class="social-networks">
-      <a href="instagram.com/rocketseat" target="_blanked">Instagram</a>
-      <a href="github.com/rocketseat" target="_blanked">Github</a>
-      <a href="facebook.com/rocketseat" target="_blanked">Facebook</a>
+      {% for link in data.links %}
+      <a href="{{link.url}}" target="_blanked">{{link.name}}</a>
+      {% endfor %}
     </div>
 {% endblock %}    

@@ -13,7 +13,29 @@ nunjucks.configure("views", {
 })
 
 server.get("/", function(req, res){
-  return res.render("about")
+  const data = {  
+    avatar_link: "https://rocketseat.com.br/static/images/logo-rocketseat.svg",
+    name: "Rocketseat",
+    site: "rocketseat.com.br",
+    role: 'In the midst of so much information and the amount of tools that come up every day, you need someone to take you in the right direction.',
+    desccription: "Our core technologies are:",
+    links: [
+      {
+        name: "Instagram",
+        url: "https://instagram.com/rocketseat"
+      },
+      {
+        name: "Github",
+        url: "https://github.com/rocketseat"
+      },
+      {
+        name: "Facebook",
+        url: "https://facebook.com/rocketseat"
+      }
+    ]
+  }
+
+  return res.render("about", { data })
 })
 
 server.get("/contents", function(req, res){

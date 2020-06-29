@@ -7,14 +7,16 @@
 
 {% block content %}
 <div id="wrapper">
-  <img src="https://avatars0.githubusercontent.com/u/58537046?s=400&v=4" alt="Imagem">
-  <h1><a href="https://github.com/LVKIN" target="_blank">Lucas Passos</a></h1>
-  <h2>Systems Analysis and Development Student</h2>
-  <p>Future Full-stack programmer</p>
+  <img src="{{item.avatar_link}}" alt="avatar">
+  <h1><a href="https://github.com/LVKIN" target="_blank">{{item.name}}</a></h1>
+  <h2>{{item.role}}</h2>
+  <p>{{item.description}}</p>
 </div>
+
 <div id="social-network" class="links">
-  <a href="https://github.com/LVKIN" target="_blank">Github</a>
-  <a href="https://www.twitter.com/iae_neguinn" target="_blank">Twitter</a>
-  <a href="https://www.linkedin.com/in/lvkin/" target="_blank">Linkedin</a>
+  {% for link in item.links %}
+  <a href="{{link.url}}" target="_blank">{{link.name}}</a>
+  {% endfor %}
 </div>
+
 {% endblock %}
