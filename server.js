@@ -9,7 +9,9 @@ server.use(express.static('public'))
 server.set("view engine", "njk")
 
 nunjunks.configure("views", {
-  express:server
+  express:server,
+  autoscape: false,
+  noCache: true
 })
 
 server.get("/", function (req, res){
@@ -39,6 +41,19 @@ server.get("/", function (req, res){
 
 server.get("/videos", function(req, res){
   return res.render("videos", {items: projs})
+})
+
+server.get("/videos/preview", function(req, res){
+  const id = req.query.id
+
+  const video = projs.find(function(video){
+  return video.id == id})
+
+  if(!video){
+    return res.send("Video not found!")
+  }
+
+  return res.render("preview", {item: video})
 })
 
 server.use(function(req, res){

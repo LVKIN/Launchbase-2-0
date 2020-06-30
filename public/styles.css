@@ -94,9 +94,13 @@ header{
   background-color: var(--color-rocket);
   display: grid;
 }
+.featured-wrapper.card__image-container{
+  position: relative;
+}
 .card__image-container img{
   width: 100%;
   cursor: pointer;
+
 }
 .card__content,
 .card__info{ 
@@ -167,4 +171,41 @@ iframe{
 
 .error-content{
   font-size: 24px;
+}
+
+/* FEATURED */
+.featured{
+  background-color: #cba000;
+  padding:  4px 8px;
+  color: black;
+  border-radius: 4px;
+  position: absolute;
+  right: 5px;
+  top: -10px;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* video preview */
+
+.video{
+  margin: 0 auto;
+  max-width: 800px;
+}
+.video h1{
+  text-align: justify;
+  text-align-last: center;
+}
+
+.card__video-container{
+  position: relative;
+  padding-top: 70%;
+}
+
+.card__video-container iframe{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
 }
