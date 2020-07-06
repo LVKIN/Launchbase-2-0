@@ -1,6 +1,4 @@
-const modalOverlay = document.querySelector('.modal-overlay')
 const cards = document.querySelectorAll('.card')
-
 
 for(let card of cards){
   card.addEventListener("click", function(){
@@ -8,5 +6,3 @@ for(let card of cards){
     window.location.href = `/videos/preview?id=${videoID}`
   })
 }
-
-
