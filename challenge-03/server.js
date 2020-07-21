@@ -16,6 +16,9 @@ nunjucks.configure("views", {
 server.get("/", function(req, res){
   return res.render("teachers")
 })
+server.get("/students", function(req, res){
+  return res.render("students")
+})
 
 server.listen(5005, function(){
   console.log("server is running");
