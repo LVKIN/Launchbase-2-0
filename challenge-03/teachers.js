@@ -1,33 +1,33 @@
-const fs = require('fs')
+const fs =require('fs')
 const data = require('./data.json')
-// create
+
 exports.post = function(req, res){
   const keys = Object.keys(req.body)
   for (key of keys){
     if (req.body[key] == ""){
-      return res.send('Please, fill all fields')
+      return res.render("fields")
     }
   }
-  let {avatar_url, birth, name, gender, services} = req.body
-  
-  birth = Date.parse(birth)
-  const created_at = Date.now()
-  const id = Number(data.instructors.length + 1)
+  let { avatar_url, name, birth, subjects, class_type, education } = req.body
 
-  data.instructors.push({
+  birth = Date.parse(birth)
+  const id = Number(data.teachers.length + 1)
+  const created_at = Date.now()
+
+  data.teachers.push({
     id,
     avatar_url,
     name,
     birth,
-    gender,
-    services,
+    education,
+    class_type,
+    subjects,
     created_at
   })
   fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err){
-    if (err) return res.send("Write File error")
-
-    return res.redirect("/instructors")
+    if (err){
+      return res.send("write file error")
+    }
+    return res.redirect("/teachers")
   })
-  // return res.send(keys)
 }
-

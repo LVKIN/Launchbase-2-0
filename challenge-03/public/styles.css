@@ -57,7 +57,7 @@ header{
   width: 1024px;
   min-height: 512px;
   background-color: #fff;
-  margin: 48px auto;
+  margin: 32px auto;
 
   display: grid;
   grid-template-columns: 40% 60%;
@@ -78,10 +78,56 @@ header{
     opacity: 1;
   }
 }
+.card__field{
+  padding: 64px;
+  width: 1024px;
+  min-height: 512px;
+  background-color: #fff;
+  margin: 32px auto;
+  text-align: center;
+  box-shadow: 0px 4px 8px -4px rgba(0, 0, 0, 0.5);
+
+  animation-name: up;
+  animation-duration: 1.5s;
+  animation-timing-function: ease;
+}
+.card__field h1{
+  color: red;
+  font-size: 56px;
+  margin: 0 auto;
+  width: 64px;
+  height: 64px;
+  border: 1px solid red;
+  border-radius: 50%;
+  text-align: center;
+}
+.card__field h2{
+  font-size: 48px;
+  padding: 24px 0;
+}
+
+.card__field p{
+  font-size: 28px;
+  line-height: 38px;
+}
+.card__field button{
+  margin-top: 128px;
+  width: 25%;
+  height: 64px;
+  background-color: rgb(163, 16, 16);
+  border-radius: 8px;
+  cursor: pointer;
+}
+.card__field button a{
+  font-size: 24px;
+  text-decoration: none;
+  color: white;
+  letter-spacing: 0.8pt;
+}
 
 /* DETAILS */
 .details{
-  padding: 64px;
+  padding: 32px 64px;
 }
 .details .item{
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -112,8 +158,9 @@ header{
 
 .details .item span{
   padding: 8px 16px;
-  background-color: #161569;
-  color: white;
+  background-color: var(--primary-color);
+  border: 1pt solid rgba(0, 0, 0, 0.25);
+  color: black;
   font-size: 12px;
   border-radius: 8px;
   letter-spacing: 0.6px;
@@ -121,4 +168,38 @@ header{
   margin-top: 4px;
   margin-right: 8px;
   text-transform: capitalize;
+}
+
+/* INPUT */
+input{
+  width: 100%;
+  outline: none;
+  color: #666;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+input[type="radio"]{
+  width: initial;
+  margin-right: 4px;
+  margin-top: auto;
+}
+
+input::placeholder{
+  font-size: 16px;
+  font-weight: 450;
+}
+
+button[type="submit"]{
+  width: 100%;
+  background-color: var(--primary-color);
+  opacity: 0.8;
+  color: black;
+  padding: 8px 16px;
+  margin-top: 32px;
+  font-size: 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.2);
 }

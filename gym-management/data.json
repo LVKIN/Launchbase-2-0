@@ -1,18 +1,13 @@
 {
   "instructors": [
     {
+      "id": 1,
       "avatar_url": "https://google.com",
       "name": "Lucas",
-      "birth": "2001-05-16",
+      "birth": 989971200000,
       "gender": "M",
-      "services": "a"
-    },
-    {
-      "avatar_url": "https://google.com",
-      "name": "Gabi",
-      "birth": "2001-05-16",
-      "gender": "F",
-      "services": "a"
+      "services": "a",
+      "created_at": 1595477897831
     }
   ]
 }
